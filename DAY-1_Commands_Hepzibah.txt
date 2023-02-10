@@ -1,0 +1,487 @@
+zroot@goorm:/workspace/BASH# sudo apt update
+Get:1 https://cli-assets.heroku.com/apt ./ InRelease [2550 B]
+Get:3 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
+Hit:4 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+Get:5 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Err:1 https://cli-assets.heroku.com/apt ./ InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 536F8F1DE80F6A35
+Get:6 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease [83.3 kB]
+Get:2 https://cf-cli-debian-repo.s3.amazonaws.com stable InRelease [2679 B]
+Get:7 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [3099 kB]
+Get:8 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [3524 kB]
+Get:9 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [1568 kB]
+Get:10 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [22.9 kB]
+Get:11 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [1311 kB]
+Get:12 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [2342 kB]
+Get:13 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [1352 kB]
+Get:14 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [30.0 kB]
+Get:15 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [20.5 kB]
+Get:16 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [64.0 kB]
+Err:2 https://cf-cli-debian-repo.s3.amazonaws.com stable InRelease
+  The following signatures were invalid: EXPKEYSIG 172B5989FCD21EF8 CF CLI Team <cf-cli-eng@pivotal.io>
+Fetched 13.6 MB in 10s (1322 kB/s)
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+193 packages can be upgraded. Run 'apt list --upgradable' to see them.
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error
+: https://cli-assets.heroku.com/apt ./ InRelease: The following signatures couldn't be verified because the public key is not available: N
+O_PUBKEY 536F8F1DE80F6A35
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error
+: https://cf-cli-debian-repo.s3.amazonaws.com stable InRelease: The following signatures were invalid: EXPKEYSIG 172B5989FCD21EF8 CF CLI T
+eam <cf-cli-eng@pivotal.io>
+W: Failed to fetch http://packages.cloudfoundry.org/debian/dists/stable/InRelease  The following signatures were invalid: EXPKEYSIG 172B59
+89FCD21EF8 CF CLI Team <cf-cli-eng@pivotal.io>
+W: Failed to fetch https://cli-assets.heroku.com/apt/./InRelease  The following signatures couldn't be verified because the public key is
+not available: NO_PUBKEY 536F8F1DE80F6A35
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+root@goorm:/workspace/BASH# apt list --upgradable
+Listing... Done
+apt/bionic-updates 1.6.14 amd64 [upgradable from: 1.6.12]
+apt-transport-https/bionic-updates 1.6.14 all [upgradable from: 1.6.12]
+apt-utils/bionic-updates 1.6.14 amd64 [upgradable from: 1.6.12]
+base-files/bionic-updates 10.1ubuntu2.11 amd64 [upgradable from: 10.1ubuntu2.5]
+bash/bionic-updates,bionic-security 4.4.18-2ubuntu1.3 amd64 [upgradable from: 4.4.18-2ubuntu1.2]
+binutils/bionic-updates,bionic-security 2.30-21ubuntu1~18.04.8 amd64 [upgradable from: 2.30-21ubuntu1~18.04.2]
+binutils-common/bionic-updates,bionic-security 2.30-21ubuntu1~18.04.8 amd64 [upgradable from: 2.30-21ubuntu1~18.04.2]
+binutils-x86-64-linux-gnu/bionic-updates,bionic-security 2.30-21ubuntu1~18.04.8 amd64 [upgradable from: 2.30-21ubuntu1~18.04.2]
+bsdutils/bionic-updates,bionic-security 1:2.31.1-0.4ubuntu3.7 amd64 [upgradable from: 1:2.31.1-0.4ubuntu3.3]
+ca-certificates/bionic-updates,bionic-security 20211016ubuntu0.18.04.1 all [upgradable from: 20180409]
+cpp-7/bionic-updates,bionic-security 7.5.0-3ubuntu1~18.04 amd64 [upgradable from: 7.4.0-1ubuntu1~18.04.1]
+cron/bionic-updates,bionic-security 3.0pl1-128.1ubuntu1.2 amd64 [upgradable from: 3.0pl1-128.1ubuntu1]
+curl/bionic-updates,bionic-security 7.58.0-2ubuntu3.21 amd64 [upgradable from: 7.58.0-2ubuntu3.8]
+dbus/bionic-updates,bionic-security 1.12.2-1ubuntu1.4 amd64 [upgradable from: 1.12.2-1ubuntu1.1]
+dirmngr/bionic-updates,bionic-security 2.2.4-1ubuntu1.6 amd64 [upgradable from: 2.2.4-1ubuntu1.2]
+distro-info-data/bionic-updates 0.37ubuntu0.15 all [upgradable from: 0.37ubuntu0.5]
+dmsetup/bionic-updates 2:1.02.145-4.1ubuntu3.18.04.3 amd64 [upgradable from: 2:1.02.145-4.1ubuntu3.18.04.1]
+dpkg/bionic-updates,bionic-security 1.19.0.5ubuntu2.4 amd64 [upgradable from: 1.19.0.5ubuntu2.1]
+dpkg-dev/bionic-updates,bionic-security 1.19.0.5ubuntu2.4 all [upgradable from: 1.19.0.5ubuntu2.3]
+e2fsprogs/bionic-updates,bionic-security 1.44.1-1ubuntu1.4 amd64 [upgradable from: 1.44.1-1ubuntu1.1]
+fdisk/bionic-updates,bionic-security 2.31.1-0.4ubuntu3.7 amd64 [upgradable from: 2.31.1-0.4ubuntu3.3]
+file/bionic-updates,bionic-security 1:5.32-2ubuntu0.4 amd64 [upgradable from: 1:5.32-2ubuntu0.2]
+g++-7/bionic-updates,bionic-security 7.5.0-3ubuntu1~18.04 amd64 [upgradable from: 7.4.0-1ubuntu1~18.04.1]
+gcc-7/bionic-updates,bionic-security 7.5.0-3ubuntu1~18.04 amd64 [upgradable from: 7.4.0-1ubuntu1~18.04.1]
+gcc-7-base/bionic-updates,bionic-security 7.5.0-3ubuntu1~18.04 amd64 [upgradable from: 7.4.0-1ubuntu1~18.04.1]
+gcc-8-base/bionic-updates,bionic-security 8.4.0-1ubuntu1~18.04 amd64 [upgradable from: 8.3.0-6ubuntu1~18.04.1]
+git/bionic-updates,bionic-security 1:2.17.1-1ubuntu0.13 amd64 [upgradable from: 1:2.17.1-1ubuntu0.4]
+git-man/bionic-updates,bionic-security 1:2.17.1-1ubuntu0.13 all [upgradable from: 1:2.17.1-1ubuntu0.4]
+gnupg/bionic-updates,bionic-security 2.2.4-1ubuntu1.6 amd64 [upgradable from: 2.2.4-1ubuntu1.2]
+gnupg-l10n/bionic-updates,bionic-security 2.2.4-1ubuntu1.6 all [upgradable from: 2.2.4-1ubuntu1.2]
+gnupg-utils/bionic-updates,bionic-security 2.2.4-1ubuntu1.6 amd64 [upgradable from: 2.2.4-1ubuntu1.2]
+gpg/bionic-updates,bionic-security 2.2.4-1ubuntu1.6 amd64 [upgradable from: 2.2.4-1ubuntu1.2]
+gpg-agent/bionic-updates,bionic-security 2.2.4-1ubuntu1.6 amd64 [upgradable from: 2.2.4-1ubuntu1.2]
+gpg-wks-client/bionic-updates,bionic-security 2.2.4-1ubuntu1.6 amd64 [upgradable from: 2.2.4-1ubuntu1.2]
+gpg-wks-server/bionic-updates,bionic-security 2.2.4-1ubuntu1.6 amd64 [upgradable from: 2.2.4-1ubuntu1.2]
+gpgconf/bionic-updates,bionic-security 2.2.4-1ubuntu1.6 amd64 [upgradable from: 2.2.4-1ubuntu1.2]
+gpgsm/bionic-updates,bionic-security 2.2.4-1ubuntu1.6 amd64 [upgradable from: 2.2.4-1ubuntu1.2]
+gpgv/bionic-updates,bionic-security 2.2.4-1ubuntu1.6 amd64 [upgradable from: 2.2.4-1ubuntu1.2]
+grep/bionic-updates 3.1-2build1 amd64 [upgradable from: 3.1-2]
+gzip/bionic-updates,bionic-security 1.6-5ubuntu1.2 amd64 [upgradable from: 1.6-5ubuntu1]
+krb5-locales/bionic-updates,bionic-security 1.16-2ubuntu0.2 all [upgradable from: 1.16-2ubuntu0.1]
+libapt-inst2.0/bionic-updates 1.6.14 amd64 [upgradable from: 1.6.12]
+libapt-pkg5.0/bionic-updates 1.6.14 amd64 [upgradable from: 1.6.12]
+libasan4/bionic-updates,bionic-security 7.5.0-3ubuntu1~18.04 amd64 [upgradable from: 7.4.0-1ubuntu1~18.04.1]
+libasn1-8-heimdal/bionic-updates,bionic-security 7.5.0+dfsg-1ubuntu0.2 amd64 [upgradable from: 7.5.0+dfsg-1]
+libatomic1/bionic-updates,bionic-security 8.4.0-1ubuntu1~18.04 amd64 [upgradable from: 8.3.0-6ubuntu1~18.04.1]
+libaudit-common/bionic-updates 1:2.8.2-1ubuntu1.1 all [upgradable from: 1:2.8.2-1ubuntu1]
+libaudit1/bionic-updates 1:2.8.2-1ubuntu1.1 amd64 [upgradable from: 1:2.8.2-1ubuntu1]
+libbinutils/bionic-updates,bionic-security 2.30-21ubuntu1~18.04.8 amd64 [upgradable from: 2.30-21ubuntu1~18.04.2]
+libblkid1/bionic-updates,bionic-security 2.31.1-0.4ubuntu3.7 amd64 [upgradable from: 2.31.1-0.4ubuntu3.3]
+libbsd0/bionic-updates,bionic-security 0.8.7-1ubuntu0.1 amd64 [upgradable from: 0.8.7-1]
+libc-bin/bionic-updates 2.27-3ubuntu1.6 amd64 [upgradable from: 2.27-3ubuntu1]
+libc-dev-bin/bionic-updates 2.27-3ubuntu1.6 amd64 [upgradable from: 2.27-3ubuntu1]
+libc6/bionic-updates 2.27-3ubuntu1.6 amd64 [upgradable from: 2.27-3ubuntu1]
+libc6-dev/bionic-updates 2.27-3ubuntu1.6 amd64 [upgradable from: 2.27-3ubuntu1]
+libcc1-0/bionic-updates,bionic-security 8.4.0-1ubuntu1~18.04 amd64 [upgradable from: 8.3.0-6ubuntu1~18.04.1]
+libcilkrts5/bionic-updates,bionic-security 7.5.0-3ubuntu1~18.04 amd64 [upgradable from: 7.4.0-1ubuntu1~18.04.1]
+libcom-err2/bionic-updates,bionic-security 1.44.1-1ubuntu1.4 amd64 [upgradable from: 1.44.1-1ubuntu1.1]
+libcryptsetup12/bionic-updates 2:2.0.2-1ubuntu1.2 amd64 [upgradable from: 2:2.0.2-1ubuntu1.1]
+libcurl3-gnutls/bionic-updates,bionic-security 7.58.0-2ubuntu3.21 amd64 [upgradable from: 7.58.0-2ubuntu3.8]
+libcurl4/bionic-updates,bionic-security 7.58.0-2ubuntu3.21 amd64 [upgradable from: 7.58.0-2ubuntu3.8]
+libdbus-1-3/bionic-updates,bionic-security 1.12.2-1ubuntu1.4 amd64 [upgradable from: 1.12.2-1ubuntu1.1]
+libdevmapper1.02.1/bionic-updates 2:1.02.145-4.1ubuntu3.18.04.3 amd64 [upgradable from: 2:1.02.145-4.1ubuntu3.18.04.1]
+libdpkg-perl/bionic-updates,bionic-security 1.19.0.5ubuntu2.4 all [upgradable from: 1.19.0.5ubuntu2.3]
+libexpat1/bionic-updates,bionic-security 2.2.5-3ubuntu0.9 amd64 [upgradable from: 2.2.5-3ubuntu0.2]
+libexpat1-dev/bionic-updates,bionic-security 2.2.5-3ubuntu0.9 amd64 [upgradable from: 2.2.5-3ubuntu0.2]
+libext2fs2/bionic-updates,bionic-security 1.44.1-1ubuntu1.4 amd64 [upgradable from: 1.44.1-1ubuntu1.1]
+libfdisk1/bionic-updates,bionic-security 2.31.1-0.4ubuntu3.7 amd64 [upgradable from: 2.31.1-0.4ubuntu3.3]
+libgcc-7-dev/bionic-updates,bionic-security 7.5.0-3ubuntu1~18.04 amd64 [upgradable from: 7.4.0-1ubuntu1~18.04.1]
+libgcc1/bionic-updates,bionic-security 1:8.4.0-1ubuntu1~18.04 amd64 [upgradable from: 1:8.3.0-6ubuntu1~18.04.1]
+libgcrypt20/bionic-updates,bionic-security 1.8.1-4ubuntu1.3 amd64 [upgradable from: 1.8.1-4ubuntu1.1]
+libglib2.0-0/bionic-updates,bionic-security 2.56.4-0ubuntu0.18.04.9 amd64 [upgradable from: 2.56.4-0ubuntu0.18.04.4]
+libglib2.0-data/bionic-updates,bionic-security 2.56.4-0ubuntu0.18.04.9 all [upgradable from: 2.56.4-0ubuntu0.18.04.4]
+libgmp10/bionic-updates,bionic-security 2:6.1.2+dfsg-2ubuntu0.1 amd64 [upgradable from: 2:6.1.2+dfsg-2]
+libgnutls30/bionic-updates,bionic-security 3.5.18-1ubuntu1.6 amd64 [upgradable from: 3.5.18-1ubuntu1.1]
+libgomp1/bionic-updates,bionic-security 8.4.0-1ubuntu1~18.04 amd64 [upgradable from: 8.3.0-6ubuntu1~18.04.1]
+libgssapi-krb5-2/bionic-updates,bionic-security 1.16-2ubuntu0.2 amd64 [upgradable from: 1.16-2ubuntu0.1]
+libgssapi3-heimdal/bionic-updates,bionic-security 7.5.0+dfsg-1ubuntu0.2 amd64 [upgradable from: 7.5.0+dfsg-1]
+libhcrypto4-heimdal/bionic-updates,bionic-security 7.5.0+dfsg-1ubuntu0.2 amd64 [upgradable from: 7.5.0+dfsg-1]
+libheimbase1-heimdal/bionic-updates,bionic-security 7.5.0+dfsg-1ubuntu0.2 amd64 [upgradable from: 7.5.0+dfsg-1]
+libheimntlm0-heimdal/bionic-updates,bionic-security 7.5.0+dfsg-1ubuntu0.2 amd64 [upgradable from: 7.5.0+dfsg-1]
+libhogweed4/bionic-updates,bionic-security 3.4.1-0ubuntu0.18.04.1 amd64 [upgradable from: 3.4-1]
+libhx509-5-heimdal/bionic-updates,bionic-security 7.5.0+dfsg-1ubuntu0.2 amd64 [upgradable from: 7.5.0+dfsg-1]
+libicu60/bionic-updates,bionic-security 60.2-3ubuntu3.2 amd64 [upgradable from: 60.2-3ubuntu3]
+libidn2-0/bionic-updates,bionic-security 2.0.4-1.1ubuntu0.2 amd64 [upgradable from: 2.0.4-1.1build2]
+libitm1/bionic-updates,bionic-security 8.4.0-1ubuntu1~18.04 amd64 [upgradable from: 8.3.0-6ubuntu1~18.04.1]
+libjson-c3/bionic-updates,bionic-security 0.12.1-1.3ubuntu0.3 amd64 [upgradable from: 0.12.1-1.3]
+libk5crypto3/bionic-updates,bionic-security 1.16-2ubuntu0.2 amd64 [upgradable from: 1.16-2ubuntu0.1]
+libkeyutils1/bionic-updates 1.5.9-9.2ubuntu2.1 amd64 [upgradable from: 1.5.9-9.2ubuntu2]
+libkmod2/bionic-updates 24-1ubuntu3.5 amd64 [upgradable from: 24-1ubuntu3.2]
+libkrb5-26-heimdal/bionic-updates,bionic-security 7.5.0+dfsg-1ubuntu0.2 amd64 [upgradable from: 7.5.0+dfsg-1]
+libkrb5-3/bionic-updates,bionic-security 1.16-2ubuntu0.2 amd64 [upgradable from: 1.16-2ubuntu0.1]
+libkrb5support0/bionic-updates,bionic-security 1.16-2ubuntu0.2 amd64 [upgradable from: 1.16-2ubuntu0.1]
+libksba8/bionic-updates,bionic-security 1.3.5-2ubuntu0.18.04.1 amd64 [upgradable from: 1.3.5-2]
+libldap-2.4-2/bionic-updates,bionic-security 2.4.45+dfsg-1ubuntu1.11 amd64 [upgradable from: 2.4.45+dfsg-1ubuntu1.4]
+libldap-common/bionic-updates,bionic-security 2.4.45+dfsg-1ubuntu1.11 all [upgradable from: 2.4.45+dfsg-1ubuntu1.4]
+liblsan0/bionic-updates,bionic-security 8.4.0-1ubuntu1~18.04 amd64 [upgradable from: 8.3.0-6ubuntu1~18.04.1]
+liblz4-1/bionic-updates,bionic-security 0.0~r131-2ubuntu3.1 amd64 [upgradable from: 0.0~r131-2ubuntu3]
+liblzma5/bionic-updates,bionic-security 5.2.2-1.3ubuntu0.1 amd64 [upgradable from: 5.2.2-1.3]
+libmagic-mgc/bionic-updates,bionic-security 1:5.32-2ubuntu0.4 amd64 [upgradable from: 1:5.32-2ubuntu0.2]
+libmagic1/bionic-updates,bionic-security 1:5.32-2ubuntu0.4 amd64 [upgradable from: 1:5.32-2ubuntu0.2]
+libmount1/bionic-updates,bionic-security 2.31.1-0.4ubuntu3.7 amd64 [upgradable from: 2.31.1-0.4ubuntu3.3]
+libmpx2/bionic-updates,bionic-security 8.4.0-1ubuntu1~18.04 amd64 [upgradable from: 8.3.0-6ubuntu1~18.04.1]
+libnettle6/bionic-updates,bionic-security 3.4.1-0ubuntu0.18.04.1 amd64 [upgradable from: 3.4-1]
+libnss-systemd/bionic-updates,bionic-security 237-3ubuntu10.56 amd64 [upgradable from: 237-3ubuntu10.29]
+libp11-kit0/bionic-updates,bionic-security 0.23.9-2ubuntu0.1 amd64 [upgradable from: 0.23.9-2]
+libpam-modules/bionic-updates 1.1.8-3.6ubuntu2.18.04.3 amd64 [upgradable from: 1.1.8-3.6ubuntu2.18.04.1]
+libpam-modules-bin/bionic-updates 1.1.8-3.6ubuntu2.18.04.3 amd64 [upgradable from: 1.1.8-3.6ubuntu2.18.04.1]
+libpam-runtime/bionic-updates 1.1.8-3.6ubuntu2.18.04.3 all [upgradable from: 1.1.8-3.6ubuntu2.18.04.1]
+libpam-systemd/bionic-updates,bionic-security 237-3ubuntu10.56 amd64 [upgradable from: 237-3ubuntu10.29]
+libpam0g/bionic-updates 1.1.8-3.6ubuntu2.18.04.3 amd64 [upgradable from: 1.1.8-3.6ubuntu2.18.04.1]
+libpcre3/bionic-updates,bionic-security 2:8.39-9ubuntu0.1 amd64 [upgradable from: 2:8.39-9]
+libperl5.26/bionic-updates,bionic-security 5.26.1-6ubuntu0.6 amd64 [upgradable from: 5.26.1-6ubuntu0.3]
+libprocps6/bionic-updates 2:3.3.12-3ubuntu1.2 amd64 [upgradable from: 2:3.3.12-3ubuntu1.1]
+libpython2.7/bionic-updates,bionic-security 2.7.17-1~18.04ubuntu1.10 amd64 [upgradable from: 2.7.15-4ubuntu4~18.04.1]
+libpython2.7-dev/bionic-updates,bionic-security 2.7.17-1~18.04ubuntu1.10 amd64 [upgradable from: 2.7.15-4ubuntu4~18.04.1]
+libpython2.7-minimal/bionic-updates,bionic-security 2.7.17-1~18.04ubuntu1.10 amd64 [upgradable from: 2.7.15-4ubuntu4~18.04.1]
+libpython2.7-stdlib/bionic-updates,bionic-security 2.7.17-1~18.04ubuntu1.10 amd64 [upgradable from: 2.7.15-4ubuntu4~18.04.1]
+libpython3.6/bionic-updates,bionic-security 3.6.9-1~18.04ubuntu1.9 amd64 [upgradable from: 3.6.8-1~18.04.2]
+libpython3.6-minimal/bionic-updates,bionic-security 3.6.9-1~18.04ubuntu1.9 amd64 [upgradable from: 3.6.8-1~18.04.2]
+libpython3.6-stdlib/bionic-updates,bionic-security 3.6.9-1~18.04ubuntu1.9 amd64 [upgradable from: 3.6.8-1~18.04.2]
+libquadmath0/bionic-updates,bionic-security 8.4.0-1ubuntu1~18.04 amd64 [upgradable from: 8.3.0-6ubuntu1~18.04.1]
+libroken18-heimdal/bionic-updates,bionic-security 7.5.0+dfsg-1ubuntu0.2 amd64 [upgradable from: 7.5.0+dfsg-1]
+libsasl2-2/bionic-updates,bionic-security 2.1.27~101-g0780600+dfsg-3ubuntu2.4 amd64 [upgradable from: 2.1.27~101-g0780600+dfsg-3ubuntu2]
+libsasl2-modules/bionic-updates,bionic-security 2.1.27~101-g0780600+dfsg-3ubuntu2.4 amd64 [upgradable from: 2.1.27~101-g0780600+dfsg-3ubun
+tu2]
+libsasl2-modules-db/bionic-updates,bionic-security 2.1.27~101-g0780600+dfsg-3ubuntu2.4 amd64 [upgradable from: 2.1.27~101-g0780600+dfsg-3u
+buntu2]
+libseccomp2/bionic-updates,bionic-security 2.5.1-1ubuntu1~18.04.2 amd64 [upgradable from: 2.4.1-0ubuntu0.18.04.2]
+libsepol1/bionic-updates,bionic-security 2.7-1ubuntu0.1 amd64 [upgradable from: 2.7-1]
+libsmartcols1/bionic-updates,bionic-security 2.31.1-0.4ubuntu3.7 amd64 [upgradable from: 2.31.1-0.4ubuntu3.3]
+libsqlite3-0/bionic-updates,bionic-security 3.22.0-1ubuntu0.7 amd64 [upgradable from: 3.22.0-1ubuntu0.1]
+libss2/bionic-updates,bionic-security 1.44.1-1ubuntu1.4 amd64 [upgradable from: 1.44.1-1ubuntu1.1]
+libssl1.0.0/bionic-updates,bionic-security 1.0.2n-1ubuntu5.10 amd64 [upgradable from: 1.0.2n-1ubuntu5.3]
+libssl1.1/bionic-updates,bionic-security 1.1.1-1ubuntu2.1~18.04.20 amd64 [upgradable from: 1.1.1-1ubuntu2.1~18.04.4]
+libstdc++-7-dev/bionic-updates,bionic-security 7.5.0-3ubuntu1~18.04 amd64 [upgradable from: 7.4.0-1ubuntu1~18.04.1]
+libstdc++6/bionic-updates,bionic-security 8.4.0-1ubuntu1~18.04 amd64 [upgradable from: 8.3.0-6ubuntu1~18.04.1]
+libsvn1/bionic-updates,bionic-security 1.9.7-4ubuntu1.1 amd64 [upgradable from: 1.9.7-4ubuntu1]
+libsystemd0/bionic-updates,bionic-security 237-3ubuntu10.56 amd64 [upgradable from: 237-3ubuntu10.29]
+libtsan0/bionic-updates,bionic-security 8.4.0-1ubuntu1~18.04 amd64 [upgradable from: 8.3.0-6ubuntu1~18.04.1]
+libubsan0/bionic-updates,bionic-security 7.5.0-3ubuntu1~18.04 amd64 [upgradable from: 7.4.0-1ubuntu1~18.04.1]
+libudev1/bionic-updates,bionic-security 237-3ubuntu10.56 amd64 [upgradable from: 237-3ubuntu10.24]
+libuuid1/bionic-updates,bionic-security 2.31.1-0.4ubuntu3.7 amd64 [upgradable from: 2.31.1-0.4ubuntu3.3]
+libwind0-heimdal/bionic-updates,bionic-security 7.5.0+dfsg-1ubuntu0.2 amd64 [upgradable from: 7.5.0+dfsg-1]
+libx11-6/bionic-updates,bionic-security 2:1.6.4-3ubuntu0.4 amd64 [upgradable from: 2:1.6.4-3ubuntu0.2]
+libx11-data/bionic-updates,bionic-security 2:1.6.4-3ubuntu0.4 all [upgradable from: 2:1.6.4-3ubuntu0.2]
+libxau6/bionic-updates 1:1.0.8-1ubuntu1 amd64 [upgradable from: 1:1.0.8-1]
+libxml2/bionic-updates,bionic-security 2.9.4+dfsg1-6.1ubuntu1.8 amd64 [upgradable from: 2.9.4+dfsg1-6.1ubuntu1.2]
+libzstd1/bionic-updates,bionic-security 1.3.3+dfsg-2ubuntu1.2 amd64 [upgradable from: 1.3.3+dfsg-2ubuntu1]
+linux-libc-dev/bionic-updates,bionic-security 4.15.0-200.211 amd64 [upgradable from: 4.15.0-64.73]
+locales/bionic-updates 2.27-3ubuntu1.6 all [upgradable from: 2.27-3ubuntu1]
+login/bionic-updates,bionic-security 1:4.5-1ubuntu2.5 amd64 [upgradable from: 1:4.5-1ubuntu2]
+mount/bionic-updates,bionic-security 2.31.1-0.4ubuntu3.7 amd64 [upgradable from: 2.31.1-0.4ubuntu3.3]
+multiarch-support/bionic-updates 2.27-3ubuntu1.6 amd64 [upgradable from: 2.27-3ubuntu1]
+networkd-dispatcher/bionic-updates,bionic-security 1.7-0ubuntu3.5 all [upgradable from: 1.7-0ubuntu3.3]
+openssh-client/bionic-updates 1:7.6p1-4ubuntu0.7 amd64 [upgradable from: 1:7.6p1-4ubuntu0.3]
+openssh-server/bionic-updates 1:7.6p1-4ubuntu0.7 amd64 [upgradable from: 1:7.6p1-4ubuntu0.3]
+openssh-sftp-server/bionic-updates 1:7.6p1-4ubuntu0.7 amd64 [upgradable from: 1:7.6p1-4ubuntu0.3]
+openssl/bionic-updates,bionic-security 1.1.1-1ubuntu2.1~18.04.20 amd64 [upgradable from: 1.1.1-1ubuntu2.1~18.04.4]
+passwd/bionic-updates,bionic-security 1:4.5-1ubuntu2.5 amd64 [upgradable from: 1:4.5-1ubuntu2]
+perl/bionic-updates,bionic-security 5.26.1-6ubuntu0.6 amd64 [upgradable from: 5.26.1-6ubuntu0.3]
+perl-base/bionic-updates,bionic-security 5.26.1-6ubuntu0.6 amd64 [upgradable from: 5.26.1-6ubuntu0.3]
+perl-modules-5.26/bionic-updates,bionic-security 5.26.1-6ubuntu0.6 all [upgradable from: 5.26.1-6ubuntu0.3]
+procps/bionic-updates 2:3.3.12-3ubuntu1.2 amd64 [upgradable from: 2:3.3.12-3ubuntu1.1]
+python-apt-common/bionic-updates 1.6.5ubuntu0.7 all [upgradable from: 1.6.4]
+python-cryptography/bionic-updates,bionic-security 2.1.4-1ubuntu1.4 amd64 [upgradable from: 2.1.4-1ubuntu1.3]
+python-pip/bionic-updates 9.0.1-2.3~ubuntu1.18.04.5 all [upgradable from: 9.0.1-2.3~ubuntu1.18.04.1]
+python-pip-whl/bionic-updates 9.0.1-2.3~ubuntu1.18.04.5 all [upgradable from: 9.0.1-2.3~ubuntu1.18.04.1]
+python-xdg/bionic-updates,bionic-security 0.25-4ubuntu1.1 all [upgradable from: 0.25-4ubuntu1]
+python2.7/bionic-updates,bionic-security 2.7.17-1~18.04ubuntu1.10 amd64 [upgradable from: 2.7.15-4ubuntu4~18.04.1]
+python2.7-dev/bionic-updates,bionic-security 2.7.17-1~18.04ubuntu1.10 amd64 [upgradable from: 2.7.15-4ubuntu4~18.04.1]
+python2.7-minimal/bionic-updates,bionic-security 2.7.17-1~18.04ubuntu1.10 amd64 [upgradable from: 2.7.15-4ubuntu4~18.04.1]
+python3-apt/bionic-updates 1.6.5ubuntu0.7 amd64 [upgradable from: 1.6.4]
+python3-software-properties/bionic-updates 0.96.24.32.18 all [upgradable from: 0.96.24.32.11]
+python3-urllib3/bionic-updates,bionic-security 1.22-1ubuntu0.18.04.2 all [upgradable from: 1.22-1ubuntu0.18.04.1]
+python3.6/bionic-updates,bionic-security 3.6.9-1~18.04ubuntu1.9 amd64 [upgradable from: 3.6.8-1~18.04.2]
+python3.6-minimal/bionic-updates,bionic-security 3.6.9-1~18.04ubuntu1.9 amd64 [upgradable from: 3.6.8-1~18.04.2]
+software-properties-common/bionic-updates 0.96.24.32.18 all [upgradable from: 0.96.24.32.11]
+ssh/bionic-updates 1:7.6p1-4ubuntu0.7 all [upgradable from: 1:7.6p1-4ubuntu0.3]
+subversion/bionic-updates,bionic-security 1.9.7-4ubuntu1.1 amd64 [upgradable from: 1.9.7-4ubuntu1]
+sudo/bionic-updates,bionic-security 1.8.21p2-3ubuntu1.4 amd64 [upgradable from: 1.8.21p2-3ubuntu1]
+systemd/bionic-updates,bionic-security 237-3ubuntu10.56 amd64 [upgradable from: 237-3ubuntu10.29]
+systemd-sysv/bionic-updates,bionic-security 237-3ubuntu10.56 amd64 [upgradable from: 237-3ubuntu10.29]
+tar/bionic-updates,bionic-security 1.29b-2ubuntu0.3 amd64 [upgradable from: 1.29b-2ubuntu0.1]
+tzdata/bionic-updates,bionic-security 2022g-0ubuntu0.18.04 all [upgradable from: 2019b-0ubuntu0.18.04]
+ubuntu-keyring/bionic-updates 2018.09.18.1~18.04.2 all [upgradable from: 2018.09.18.1~18.04.0]
+unattended-upgrades/bionic-updates 1.1ubuntu1.18.04.14 all [upgradable from: 1.1ubuntu1.18.04.11]
+unzip/bionic-updates,bionic-security 6.0-21ubuntu1.2 amd64 [upgradable from: 6.0-21ubuntu1]
+util-linux/bionic-updates,bionic-security 2.31.1-0.4ubuntu3.7 amd64 [upgradable from: 2.31.1-0.4ubuntu3.3]
+vim/bionic-updates,bionic-security 2:8.0.1453-1ubuntu1.9 amd64 [upgradable from: 2:8.0.1453-1ubuntu1.1]
+vim-common/bionic-updates,bionic-security 2:8.0.1453-1ubuntu1.9 all [upgradable from: 2:8.0.1453-1ubuntu1.1]
+vim-runtime/bionic-updates,bionic-security 2:8.0.1453-1ubuntu1.9 all [upgradable from: 2:8.0.1453-1ubuntu1.1]
+xxd/bionic-updates,bionic-security 2:8.0.1453-1ubuntu1.9 amd64 [upgradable from: 2:8.0.1453-1ubuntu1.1]
+xz-utils/bionic-updates,bionic-security 5.2.2-1.3ubuntu0.1 amd64 [upgradable from: 5.2.2-1.3]
+zlib1g/bionic-updates,bionic-security 1:1.2.11.dfsg-0ubuntu2.2 amd64 [upgradable from: 1:1.2.11.dfsg-0ubuntu2]
+root@goorm:/workspace/BASH# sudo apt upgrade
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  apt apt-transport-https apt-utils base-files bash binutils binutils-common binutils-x86-64-linux-gnu bsdutils ca-certificates cpp-7
+  cron curl dbus dirmngr distro-info-data dmsetup dpkg dpkg-dev e2fsprogs fdisk file g++-7 gcc-7 gcc-7-base gcc-8-base git git-man gnupg
+  gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client gpg-wks-server gpgconf gpgsm gpgv grep gzip krb5-locales libapt-inst2.0
+  libapt-pkg5.0 libasan4 libasn1-8-heimdal libatomic1 libaudit-common libaudit1 libbinutils libblkid1 libbsd0 libc-bin libc-dev-bin
+libc6 libc6-dev libcc1-0 libcilkrts5 libcom-err2 libcryptsetup12 libcurl3-gnutls libcurl4 libdbus-1-3 libdevmapper1.02.1 libdpkg-perl
+  libexpat1 libexpat1-dev libext2fs2 libfdisk1 libgcc-7-dev libgcc1 libgcrypt20 libglib2.0-0 libglib2.0-data libgmp10 libgnutls30
+  libgomp1 libgssapi-krb5-2 libgssapi3-heimdal libhcrypto4-heimdal libheimbase1-heimdal libheimntlm0-heimdal libhogweed4
+  libhx509-5-heimdal libicu60 libidn2-0 libitm1 libjson-c3 libk5crypto3 libkeyutils1 libkmod2 libkrb5-26-heimdal libkrb5-3
+  libkrb5support0 libksba8 libldap-2.4-2 libldap-common liblsan0 liblz4-1 liblzma5 libmagic-mgc libmagic1 libmount1 libmpx2 libnettle6
+  libnss-systemd libp11-kit0 libpam-modules libpam-modules-bin libpam-runtime libpam-systemd libpam0g libpcre3 libperl5.26 libprocps6
+  libpython2.7 libpython2.7-dev libpython2.7-minimal libpython2.7-stdlib libpython3.6 libpython3.6-minimal libpython3.6-stdlib
+  libquadmath0 libroken18-heimdal libsasl2-2 libsasl2-modules libsasl2-modules-db libseccomp2 libsepol1 libsmartcols1 libsqlite3-0
+  libss2 libssl1.0.0 libssl1.1 libstdc++-7-dev libstdc++6 libsvn1 libsystemd0 libtsan0 libubsan0 libudev1 libuuid1 libwind0-heimdal
+  libx11-6 libx11-data libxau6 libxml2 libzstd1 linux-libc-dev locales login mount multiarch-support networkd-dispatcher openssh-client
+  openssh-server openssh-sftp-server openssl passwd perl perl-base perl-modules-5.26 procps python-apt-common python-cryptography
+  python-pip python-pip-whl python-xdg python2.7 python2.7-dev python2.7-minimal python3-apt python3-software-properties python3-urllib3
+  python3.6 python3.6-minimal software-properties-common ssh subversion sudo systemd systemd-sysv tar tzdata ubuntu-keyring
+  unattended-upgrades unzip util-linux vim vim-common vim-runtime xxd xz-utils zlib1g
+193 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 147 MB of archives.
+After this operation, 5200 kB of additional disk space will be used.
+Do you want to continue? [Y/n] n
+Abort.
+root@goorm:/workspace/BASH# ls
+README.md  goorm.manifest
+root@goorm:/workspace/BASH# pwd
+/workspace/BASH
+root@goorm:/workspace/BASH# mkdir sample
+root@goorm:/workspace/BASH# cd sample
+root@goorm:/workspace/BASH/sample# touch a.txt
+root@goorm:/workspace/BASH/sample# mv a.txt b.txt
+root@goorm:/workspace/BASH/sample# cp b.txt c.txt
+root@goorm:/workspace/BASH/sample# cat c.txt | grep "if"
+root@goorm:/workspace/BASH/sample# echo "helloworld"
+helloworld
+root@goorm:/workspace/BASH/sample# uname
+Linux
+root@goorm:/workspace/BASH/sample# whoami
+root
+root@goorm:/workspace/BASH/sample# cal
+cal: setlocale: No such file or directory
+    January 2023
+Su Mo Tu We Th Fr Sa
+ 1  2  3  4  5  6  7
+ 8  9 10 11 12 13 14
+15 16 17 18 19 20 21
+22 23 24 25 26 27 28
+29 30 31
+
+root@goorm:/workspace/BASH/sample# chmod +x c.txt
+root@goorm:/workspace/BASH/sample# head c.txt
+root@goorm:/workspace/BASH/sample# tail c.txt
+root@goorm:/workspace/BASH/sample# ps
+    PID TTY          TIME CMD
+    243 pts/3    00:00:00 bash
+    854 pts/3    00:00:00 ps
+root@goorm:/workspace/BASH/sample# ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.17.0.22  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:ac:11:00:16  txqueuelen 0  (Ethernet)
+        RX packets 2475  bytes 13819627 (13.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1477  bytes 189757 (189.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+loop  txqueuelen 1  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@goorm:/workspace/BASH/sample# apt install numpy
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package numpy
+root@goorm:/workspace/BASH# rm add.sh
+root@goorm:/workspace/BASH# mkdir text
+root@goorm:/workspace/BASH# rm -r text
+root@goorm:/workspace/BASH/sample# less shell.sh
+echo "helloworld" TO FIND ODD NUMBER
+#!/bin/bash
+echo "Enter a number"
+read n
+if [ $((number %2)) -eq 0 ];
+then
+    echo "THE NUMBER IS EVEN"
+else
+    echo "NOT EVEN"
+fi
+2.TO FIND EVEN NUMBER
+echo "Enter a number"
+read n
+if [ $((number %2)) -nq 0 ];
+then
+shell.sh ...skipping...
+echo "helloworld" TO FIND ODD NUMBER
+#!/bin/bash
+echo "Enter a number"
+read n
+if [ $((number %2)) -eq 0 ];
+then
+    echo "THE NUMBER IS EVEN"
+else
+    echo "NOT EVEN"
+fi
+2.TO FIND EVEN NUMBER
+echo "Enter a number"
+read n
+if [ $((number %2)) -nq 0 ];
+then
+    echo "THIS IS ODD NUMBER"
+else
+    echo "NOT ODD NUMBER"
+fi
+~
+~
+~
+~
+~
+~
+~
+~
+(END) ...skipping...
+echo "helloworld" TO FIND ODD NUMBER
+#!/bin/bash
+echo "Enter a number"
+read n
+if [ $((number %2)) -eq 0 ];
+then
+    echo "THE NUMBER IS EVEN"
+else
+    echo "NOT EVEN"
+fi
+2.TO FIND EVEN NUMBER
+echo "Enter a number"
+read n
+if [ $((number %2)) -eq 0 ];
+then
+    echo "THE NUMBER IS EVEN"
+else
+    echo "NOT EVEN"
+fi
+2.TO FIND EVEN NUMBER
+echo "Enter a number"
+read n
+if [ $((number %2)) -nq 0 ];
+then
+    echo "THIS IS ODD NUMBER"
+else
+    echo "NOT ODD NUMBER"
+fi
+~
+~
+~
+~
+~
+~
+~
+~
+~
+...skipping...
+root@goorm:/workspace/BASH# lsb_release --a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 18.04.2 LTS
+Release:        18.04
+Codename:       bionic
+root@goorm:/workspace/BASH# cd sample
+root@goorm:/workspace/BASH/sample# touch file{1..10}.txt
+root@goorm:/workspace/BASH/sample# ls
+b.txt  c.txt  file10.txt  file1.txt  file2.txt  file3.txt  file4.txt  file5.txt  file6.txt  file7.txt  file8.txt  file9.txt
+root@goorm:/workspace/BASH/sample# nano file1.txt
+root@goorm:/workspace/BASH/sample# nano file2.txt
+root@goorm:/workspace/BASH/sample# tar -cvf test.tar all.txt
+tar: all.txt: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
+
+root@goorm:/workspace/BASH/sample# tar -cvf test.tar *.txt
+b.txt
+c.txt
+file1.txt
+file10.txt
+file2.txt
+file3.txt
+file4.txt
+file5.txt
+file6.txt
+file7.txt
+file8.txt
+file9.txt
+root@goorm:/workspace/BASH/sample# ls
+b.txt  c.txt  file10.txt  file1.txt  file2.txt  file3.txt  file4.txt  file5.txt  file6.txt  file7.txt  file8.txt  file9.txt  test.tar
+root@goorm:/workspace/BASH/sample# rm *.txt
+root@goorm:/workspace/BASH/sample# ls
+test.tar
+root@goorm:/workspace/BASH/sample# tar -xvf test.tar
+b.txt
+c.txt
+file1.txt
+file10.txt
+file2.txt
+file3.txt
+file4.txt
+file5.txt
+file6.txt
+file7.txt
+file8.txt
+file9.txt
+root@goorm:/workspace/BASH/sample# zip sampl.zip *.txt
+  adding: b.txt (stored 0%)
+  adding: c.txt (stored 0%)
+  adding: file1.txt (stored 0%)
+  adding: file10.txt (stored 0%)
+  adding: file2.txt (deflated 6%)
+  adding: file3.txt (stored 0%)
+  adding: file4.txt (stored 0%)
+  adding: file5.txt (stored 0%)
+  adding: file6.txt (stored 0%)
+  adding: file7.txt (stored 0%)
+  adding: file8.txt (stored 0%)
+  adding: file9.txt (stored 0%)
+root@goorm:/workspace/BASH/sample# ls
+b.txt  file10.txt  file2.txt  file4.txt  file6.txt  file8.txt  sampl.zip
+c.txt  file1.txt   file3.txt  file5.txt  file7.txt  file9.txt  test.tar
+root@goorm:/workspace/BASH# passwd
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+root@goorm:/workspace/BASH# sudo chown root:root file1.txt
+chown: cannot access 'file1.txt': No such file or directory
+root@goorm:/workspace/BASH# sudo chown root:root shell.sh
+root@goorm:/workspace/BASH# ls -l | grep shell.sh
+-rw-rw-r-- 1 root root   331 Jan  3 10:17 shell.sh
+root@goorm:/workspace/BASH# wget https://static.realpython.com/python_cheat_sheet_v1.pdf
+--2023-01-04 05:23:21--  https://static.realpython.com/python_cheat_sheet_v1.pdf
+Resolving static.realpython.com (static.realpython.com)... 172.67.43.55, 104.22.17.171, 104.22.16.171, ...
+Connecting to static.realpython.com (static.realpython.com)|172.67.43.55|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/pdf]
+Saving to: ‘python_cheat_sheet_v1.pdf’
+
+python_cheat_sheet_v1.pdf              [ <=>                                                           ] 274.94K  --.-KB/s    in 0.009s
+
+2023-01-04 05:23:21 (28.7 MB/s) - ‘python_cheat_sheet_v1.pdf’ saved [281535]
