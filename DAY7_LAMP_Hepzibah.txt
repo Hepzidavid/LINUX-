@@ -1,0 +1,322 @@
+Install Apache Web Server on Ubuntu:
+
+hepzi@ubuntu:~$ sudo apt-get update
+[sudo] password for hepzi: 
+
+hepzi@ubuntu:~$ sudo apt-get upgrade
+
+hepzi@ubuntu:~$ sudo apt-get install apache2 apache2-utils 
+[sudo] password for hepzi:
+
+To enable the server:
+hepzi@ubuntu:~$ sudo systemctl enable apache2
+Synchronizing state of apache2.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable apache2
+
+hepzi@ubuntu:~$ sudo systemctl start apache2
+Job for apache2.service failed because the control process exited with error code.
+See "systemctl status apache2.service" and "journalctl -xeu apache2.service" for details.
+
+
+hepzi@ubuntu:~$ sudo apt install net-tools
+
+
+hepzi@ubuntu:~$ netstat -tulpn
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 ::1:631                 :::*                    LISTEN      -                   
+udp        0      0 0.0.0.0:49203           0.0.0.0:*                           -                 
+
+  
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:631             0.0.0.0:*                           -                   
+udp6       0      0 :::5353                 :::*                                -                   
+udp6       0      0 :::38488                :::*                                -                
+
+
+hepzi@ubuntu:~$ sudo systemctl restart apache2
+
+
+hepzi@ubuntu:~$ sudo systemctl status apache2
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: active (running) since Fri 2023-01-13 13:01:21 IST; 8s ago
+       Docs: https://httpd.apache.org/docs/2.4/
+    Process: 35714 ExecStart=/usr/sbin/apachectl start (code=exited, status=0/SUCCESS)
+   Main PID: 35718 (apache2)
+      Tasks: 55 (limit: 2287)
+     Memory: 5.2M
+        CPU: 182ms
+     CGroup: /system.slice/apache2.service
+             ├─35718 /usr/sbin/apache2 -k start
+             ├─35719 /usr/sbin/apache2 -k start
+             └─35720 /usr/sbin/apache2 -k start
+
+Jan 13 13:01:20 ubuntu systemd[1]: Starting The Apache HTTP Server...
+Jan 13 13:01:21 ubuntu systemd[1]: Started The Apache HTTP Server.
+
+
+hepzi@ubuntu:~$ sudo ufw allow in "Apache"
+Rules updated
+Rules updated (v6)
+
+
+hepzi@ubuntu:~$ sudo ufw app list
+[sudo] password for hepzi: 
+Available applications:
+  Apache
+  Apache Full
+  Apache Secure
+  CUPS
+  Nginx Full
+  Nginx HTTP
+  Nginx HTTPS
+
+
+Installing Mysql:
+hepzi@ubuntu:~$ sudo apt-get install mysql-client
+
+
+
+ubuntu:~$ sudo apt-get install php libapache2-mod-php php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+
+0 upgraded, 0 newly installed, 0 to remove and 7 not upgraded.
+
+
+hepzi@ubuntu:~$ sudo nano /var/www/html/info.php
+[sudo] password for hepzi: 
+hepzi@ubuntu:~$ hostname -I
+10.0.2.15 
+
+
+hepzi@ubuntu:~$ apache2 -v
+Server version: Apache/2.4.52 (Ubuntu)
+Server built:   2022-09-30T04:09:50
+hepzi@ubuntu:~$ php -v
+PHP 8.1.2-1ubuntu2.9 (cli) (built: Oct 19 2022 14:58:09) (NTS)
+Copyright (c) The PHP Group
+Zend Engine v4.1.2, Copyright (c) Zend Technologies
+    with Zend OPcache v8.1.2-1ubuntu2.9, Copyright (c), by Zend Technologies
+
+hepzi@ubuntu:~$ sudo mysql
+[sudo] password for hepzi: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.31-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> quit
+Bye
+hepzi@ubuntu:~$ sudo mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 38
+Server version: 8.0.31-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'Qwer@1234';
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> exit
+Bye
+hepzi@ubuntu:~$ sudo mysql_secure_installation
+
+Securing the MySQL server deployment.
+
+Enter password for user root: 
+The 'validate_password' component is installed on the server.
+The subsequent steps will run with the existing configuration
+of the component.
+Using existing password for root.
+
+Estimated strength of the password: 100 
+Change the password for root ? ((Press y|Y for Yes, any other key for No) : n
+
+ ... skipping.
+By default, a MySQL installation has an anonymous user,
+allowing anyone to log into MySQL without having to have
+a user account created for them. This is intended only for
+testing, and to make the installation go a bit smoother.
+You should remove them before moving into a production
+environment.
+
+Remove anonymous users? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+
+Normally, root should only be allowed to connect from
+'localhost'. This ensures that someone cannot guess at
+the root password from the network.
+
+Disallow root login remotely? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+By default, MySQL comes with a database named 'test' that
+anyone can access. This is also intended only for testing,
+and should be removed before moving into a production
+environment.
+
+
+Remove test database and access to it? (Press y|Y for Yes, any other key for No) : y
+ - Dropping test database...
+Success.
+
+ - Removing privileges on test database...
+Success.
+
+Reloading the privilege tables will ensure that all changes
+made so far will take effect immediately.
+
+Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+All done! 
+
+Bye
+hepzi@ubuntu:~$ sudo systemctl status mysql
+[sudo] password for hepzi: 
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset:>
+     Active: active (running) since Mon 2023-01-16 18:46:02 IST; 36min ago
+   Main PID: 1035 (mysqld)
+     Status: "Server is operational"
+      Tasks: 40 (limit: 2287)
+     Memory: 419.5M
+        CPU: 54.520s
+     CGroup: /system.slice/mysql.service
+             └─1035 /usr/sbin/mysqld
+
+Jan 16 18:45:37 ubuntu systemd[1]: Starting MySQL Community Server...
+Jan 16 18:46:02 ubuntu systemd[1]: Started MySQL Community Server.
+lines 1-13/13 (END)
+hepzi@ubuntu:~$ cd /var/www/html
+hepzi@ubuntu:/var/www/html$ ls -l
+total 244
+-rwxr-xr-x  1 www-data www-data 10671 Jan 13 12:42 index.html
+-rwxr-xr-x  1 www-data www-data   612 Jan 12 15:06 index.nginx-debian.html
+-rwxr-xr-x  1 www-data www-data   405 Feb  6  2020 index.php
+-rwxr-xr-x  1 www-data www-data    21 Jan 15 22:33 info.php
+-rwxr-xr-x  1 www-data www-data 19915 Jan  1  2022 license.txt
+-rwxr-xr-x  1 www-data www-data  7389 Sep 17 03:57 readme.html
+-rwxr-xr-x  1 www-data www-data  7205 Sep 17 04:43 wp-activate.php
+drwxr-xr-x  9 www-data www-data  4096 Nov 16 00:33 wp-admin
+-rwxr-xr-x  1 www-data www-data   351 Feb  6  2020 wp-blog-header.php
+-rwxr-xr-x  1 www-data www-data  2338 Nov 10  2021 wp-comments-post.php
+-rwxr-xr-x  1 www-data www-data  3001 Dec 14  2021 wp-config-sample.php
+drwxr-xr-x  4 www-data www-data  4096 Nov 16 00:33 wp-content
+-rwxr-xr-x  1 www-data www-data  5543 Sep 20 21:14 wp-cron.php
+drwxr-xr-x 27 www-data www-data 12288 Nov 16 00:33 wp-includes
+-rwxr-xr-x  1 www-data www-data  2494 Mar 20  2022 wp-links-opml.php
+-rwxr-xr-x  1 www-data www-data  3985 Sep 19 14:29 wp-load.php
+-rwxr-xr-x  1 www-data www-data 49135 Sep 20 03:56 wp-login.php
+-rwxr-xr-x  1 www-data www-data  8522 Oct 17 16:36 wp-mail.php
+-rwxr-xr-x  1 www-data www-data 24587 Sep 26 15:47 wp-settings.php
+-rwxr-xr-x  1 www-data www-data 34350 Sep 17 06:05 wp-signup.php
+-rwxr-xr-x  1 www-data www-data  4914 Oct 17 16:52 wp-trackback.php
+-rwxr-xr-x  1 www-data www-data  3236 Jun  9  2020 xmlrpc.php
+
+hepzi@ubuntu:~$ cd /var/www/html/
+hepzi@ubuntu:/var/www/html$ sudo mysql -u root -p
+[sudo] password for hepzi: 
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 51
+Server version: 8.0.31-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE wp_mydb;
+ERROR 1007 (HY000): Can't create database 'wp_mydb'; database exists
+mysql> CREATE DATABASE wp_myfirstdb;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> CREATE USER firstwp@localhost IDENTIFIED BY 'Abcd@1234';
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> GRANT ALL PRIVILEGES ON wp_mydb. * TO firstwp@localhost;
+Query OK, 0 rows affected (0.37 sec)
+
+mysql> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> exit
+Bye
+
+
+hepzi@ubuntu:~$ sudo wget -c http://wordpress.org/latest.tar.gz
+
+Length: 22751086 (22M) [application/octet-stream]
+Saving to: ‘latest.tar.gz’
+
+latest.tar.gz                    100%[==========================================================>]  21.70M  2.79MB/s    in 9.3s    
+
+2023-01-15 22:47:55 (2.33 MB/s) - ‘latest.tar.gz’ saved [22751086/22751086]
+
+
+hepzi@ubuntu:~$ sudo tar -xzvf latest.tar.gz
+
+hepzi@ubuntu:/var/www/html$ cd wordpress
+hepzi@ubuntu:/var/www/html/wordpress$ ls
+index.php        wp-blog-header.php    wp-includes        wp-settings.php
+license.txt      wp-comments-post.php  wp-links-opml.php  wp-signup.php
+readme.html      wp-config-sample.php  wp-load.php        wp-trackback.php
+wp-activate.php  wp-content            wp-login.php       xmlrpc.php
+wp-admin         wp-cron.php           wp-mail.php
+
+
+hepzi@ubuntu:/var/www/html/wordpress$ sudo mv wp-config-sample.php wp-config.phphepzi@ubuntu:/var/www/html/wordpress$ ls
+index.php        wp-blog-header.php    wp-includes        wp-settings.php
+license.txt      wp-comments-post.php  wp-links-opml.php  wp-signup.php
+readme.html      wp-config.php         wp-load.php        wp-trackback.php
+wp-activate.php  wp-content            wp-login.php       xmlrpc.php
+wp-admin         wp-cron.php           wp-mail.php
+hepzi@ubuntu:/var/www/html/wordpress$ gedit wp-config.php
+hepzi@ubuntu:/var/www/html/wordpress$ ls
+index.php        wp-blog-header.php    wp-includes        wp-settings.php
+license.txt      wp-comments-post.php  wp-links-opml.php  wp-signup.php
+readme.html      wp-config.php         wp-load.php        wp-trackback.php
+wp-activate.php  wp-content            wp-login.php       xmlrpc.php
+wp-admin         wp-cron.php           wp-mail.php
+hepzi@ubuntu:/var/www/html/wordpress$ sudo apt-get install php libapache2-mod-php php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+
+hepzi@ubuntu:/var/www/html$ sudo apt install php libapache2-mod-php php-mysql
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+
+
+hepzi@ubuntu:~$ sudo chown -R www-data:www-data /var/www/html/
+hepzi@ubuntu:~$ sudo chmod -R 755 /var/www/html/
+
+
