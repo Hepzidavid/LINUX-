@@ -1,0 +1,179 @@
+root@goorm:/workspace/VIM# sudo apt install vim -y
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+vim is already the newest version (2:8.0.1453-1ubuntu1.1).
+0 upgraded, 0 newly installed, 0 to remove and 20 not upgraded.
+root@goorm:/workspace/VIM# sudo apt install snapd
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  apparmor liblzo2-2 libudev1 squashfs-tools udev
+Suggested packages:
+  apparmor-profiles-extra apparmor-utils zenity | kdialog
+The following NEW packages will be installed:
+  apparmor liblzo2-2 snapd squashfs-tools udev
+The following packages will be upgraded:
+  libudev1
+1 upgraded, 5 newly installed, 0 to remove and 19 not upgraded.
+Need to get 15.1 MB of archives.
+After this operation, 73.8 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 liblzo2-2 amd64 2.08-1.2 [48.7 kB]
+Ign:2 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libudev1 amd64 237-3ubuntu10.29
+Ign:3 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 udev amd64 237-3ubuntu10.29
+Get:4 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apparmor amd64 2.12-4ubuntu5.1 [487 kB]
+Err:2 http://security.ubuntu.com/ubuntu bionic-updates/main amd64 libudev1 amd64 237-3ubuntu10.29
+  404  Not Found [IP: 52.78.32.75 80]
+Err:3 http://security.ubuntu.com/ubuntu bionic-updates/main amd64 udev amd64 237-3ubuntu10.29
+  404  Not Found [IP: 52.78.32.75 80]
+Err:5 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 squashfs-tools amd64 1:4.3-6ubuntu0.18.04.1
+  404  Not Found [IP: 52.78.32.75 80]
+Err:6 http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 snapd amd64 2.40+18.04
+  404  Not Found [IP: 52.78.32.75 80]
+Fetched 535 kB in 2s (328 kB/s)
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/s/systemd/libudev1_237-3ubuntu10.29_amd64.deb  404  Not Found [IP: 52.78.32
+.75 80]
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/s/systemd/udev_237-3ubuntu10.29_amd64.deb  404  Not Found [IP: 52.78.32.75
+E: Failed to fetch http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu/pool/main/s/squashfs-tools/squashfs-tools_4.3-6ubuntu0.18.04.1_amd6
+4.deb  404  Not Found [IP: 52.78.32.75 80]
+E: Failed to fetch http://ap-northeast-2.ec2.archive.ubuntu.com/ubuntu/pool/main/s/snapd/snapd_2.40+18.04_amd64.deb  404  Not Found [IP: 5
+2.78.32.75 80]
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+root@goorm:/workspace/VIM# vim --version
+VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Jun 06 2019 17:31:41)
+Included patches: 1-1453
+Modified by pkg-vim-maintainers@lists.alioth.debian.org
+Compiled by pkg-vim-maintainers@lists.alioth.debian.org
+Huge version without GUI.  Features included (+) or not (-):
++acl               +farsi             +mouse_sgr         -tag_any_white
++arabic            +file_in_path      -mouse_sysmouse    -tcl
++autocmd           +find_in_path      +mouse_urxvt       +termguicolors
+-autoservername    +float             +mouse_xterm       +terminal
+-balloon_eval      +folding           +multi_byte        +terminfo
++balloon_eval_term -footer            +multi_lang        +termresponse
+-browse            +fork()            -mzscheme          +textobjects
+++builtin_terms    +gettext           +netbeans_intg     +timers
++byte_offset       -hangul_input      +num64             +title
++channel           +iconv             +packages          -toolbar
++cindent           +insert_expand     +path_extra        +user_commands
+-clientserver      +job               -perl              +vertsplit
+-clipboard         +jumplist          +persistent_undo   +virtualedit
++cmdline_compl     +keymap            +postscript        +visual
++cmdline_hist      +lambda            +printer           +visualextra
++cmdline_info      +langmap           +profile           +viminfo
++comments          +libcall           -python            +vreplace
++conceal           +linebreak         +python3           +wildignore
++cryptv            +lispindent        +quickfix          +wildmenu
++cscope            +listcmds          +reltime           +windows
++cursorbind        +localmap          +rightleft         +writebackup
++cursorshape       -lua               -ruby              -X11
++dialog_con        +menu              +scrollbind        -xfontset
++diff              +mksession         +signs             -xim
++digraphs          +modify_fname      +smartindent       -xpm
+-dnd               +mouse             +startuptime       -xsmp
+-ebcdic            -mouseshape        +statusline        -xterm_clipboard
++emacs_tags        +mouse_dec         -sun_workshop      -xterm_save
++eval              +mouse_gpm         +syntax
++ex_extra          -mouse_jsbterm     +tag_binary
++extra_search      +mouse_netterm     +tag_old_static
+   system vimrc file: "$VIM/vimrc"
+     user vimrc file: "$HOME/.vimrc"
+ 2nd user vimrc file: "~/.vim/vimrc"
+      user exrc file: "$HOME/.exrc"
+       defaults file: "$VIMRUNTIME/defaults.vim"
+  fall-back for $VIM: "/usr/share/vim"
+Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H   -Wdate-time  -g -O2 -fdebug-prefix-map=/build/vim-8l5tlu/vim-8.0.1453=. -fstack-protecto
+r-strong -Wformat -Werror=format-security -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1
+Linking: gcc   -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -lselinux  -lacl -lattr -
+lgpm -ldl     -L/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu -lpython3.6m -lpthread -ldl -lutil -lm
+root@goorm:/workspace/VIM# vim editor.sh
+"Welcome to vim editor"
+"hello world"
+"Enter something"
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+-- (insert) VISUAL --
+
+
+Using those following commands:
+
+"hello world"
+"Enter something"
+"world"
+"Enter something"
+Add some text
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+-- VISUAL --
+
+Vim Commands:
+ESC- To enter into command mode
+i- Insert mode
+dd- To delete the current line
+u- To undo the last change
+yy- To copy the text
+p- To paste the last copied text
+x- To delete a single character
+dw- To delete a single word
+.- To redo
+U- To undo all changes made on that line
+w- Move to beginning of next word on line
+b- Move to beginning of previous word
+:- Execute mode
+:q- Exit
+:wq- Save the file
+:w- To write the content of the file
+0- To move starting of the line
+$- To move end of the line
+q!- To (forcefully) quit without saving a file
