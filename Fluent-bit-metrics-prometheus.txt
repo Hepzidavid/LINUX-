@@ -1,0 +1,6 @@
+prometheus:
+ prometheusSpec:
+  additionalScrapeConfigs:
+   - job_name: 'fluent-bit'
+     static_configs:
+      - targets: ['fluent-bit.logging.svc.cluster.local:2020']

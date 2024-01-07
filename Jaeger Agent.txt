@@ -1,0 +1,90 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: jaeger
+    app.kubernetes.io/component: agent
+    app.kubernetes.io/instance: jaeger-allinone
+    app.kubernetes.io/managed-by: jaeger-operator
+    app.kubernetes.io/name: jaeger-allinone-agent
+    app.kubernetes.io/part-of: jaeger
+  name: jaeger-allinone-agent-daemonset
+#  namespace: observability
+spec:
+  selector:
+    matchLabels:
+      app: jaeger
+      app.kubernetes.io/component: agent
+      app.kubernetes.io/instance: jaeger-allinone
+      app.kubernetes.io/managed-by: jaeger-operator
+      app.kubernetes.io/name: jaeger-allinone-agent
+      app.kubernetes.io/part-of: jaeger
+  template:
+    metadata:
+      annotations:
+        prometheus.io/port: "14271"
+        prometheus.io/scrape: "true"
+        sidecar.istio.io/inject: "false"
+      labels:
+        app: jaeger
+        app.kubernetes.io/component: agent
+        app.kubernetes.io/instance: jaeger-allinone
+        app.kubernetes.io/managed-by: jaeger-operator
+        app.kubernetes.io/name: jaeger-allinone-agent
+        app.kubernetes.io/part-of: jaeger
+    spec:
+      dnsPolicy: ClusterFirstWithHostNet # Hostnetwork를 쓰는 경우는 반드시 이 옵션이 필요함
+      hostNetwork: true # 애플리케이션 서버는 node IP를 downward로 가져와서 데이터를 쏜다.
+      tolerations:
+      - effect: NoSchedule
+        key: application
+        operator: Exists
+      containers:
+      - args:
+        - --reporter.grpc.host-port=dns:///jaeger-collector.default:14250
+        - --reporter.type=grpc
+        image: jaegertracing/jaeger-agent:1.16.0
+        livenessProbe:
+          failureThreshold: 5
+          httpGet:
+            path: /
+            port: 14271
+            scheme: HTTP
+          initialDelaySeconds: 5
+          periodSeconds: 15
+          successThreshold: 1
+          timeoutSeconds: 1
+        name: jaeger-agent-daemonset
+        ports:
+        - containerPort: 5775
+          hostPort: 5775
+          name: zk-compact-trft
+          protocol: UDP
+        - containerPort: 5778
+          hostPort: 5778
+          name: config-rest
+          protocol: TCP
+        - containerPort: 6831
+          hostPort: 6831
+          name: jg-compact-trft
+          protocol: UDP
+        - containerPort: 6832
+          hostPort: 6832
+          name: jg-binary-trft
+          protocol: UDP
+        - containerPort: 14271
+          hostPort: 14271
+          name: admin-http
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 14271
+            scheme: HTTP
+          initialDelaySeconds: 1
+          periodSeconds: 10
+          successThreshold: 1
+      restartPolicy: Always
+      #serviceAccount: jaeger-allinone
+      #serviceAccountName: jaeger-allinone

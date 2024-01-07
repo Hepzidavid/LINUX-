@@ -1,0 +1,6 @@
+Install CRD:
+kubectl create -f https://download.elastic.co/downloads/eck/2.9.0/crds.yaml
+
+
+Install Operator:
+kubectl apply -f https://download.elastic.co/downloads/eck/2.9.0/operator.yaml

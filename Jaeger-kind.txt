@@ -1,0 +1,26 @@
+apiVersion: jaegertracing.io/v1
+kind: Jaeger
+metadata:
+  name: jaeger
+spec:
+  strategy: production
+  storage:
+    type: elasticsearch # <1>
+    options:
+      es:
+        server-urls: http://quickstart-es-http.default.svc:9200 # <2>
+        index-prefix: my-pre
+       # index-prefix: my-pre
+       # version: 7                                 
+        #create-index-templates: false               
+        tls: # <3>
+          ca: /es/certificates/ca.crt
+    secretName: elastic-secret # <4>
+  volumeMounts: # <5>
+    - name: certificates
+      mountPath: /es/certificates/
+      readOnly: true
+  volumes:
+    - name: certificates
+      secret:
+        secretName: quickstart-es-http-certs-public
