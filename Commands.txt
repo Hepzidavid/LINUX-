@@ -1,0 +1,70 @@
+To run elasticsearch on local: 
+./elasticsearch.bat
+.\/elasticsearch-reset-password -u elastic
+(edited)
+
+bqSW-RWEq5Pw2bq8zAX2
+
+
+
+elastic:4hEoVCMlB2n53427g0Isu6q6 (edited) 
+
+
+
+curl -u elastic -k -X POST "https://10.152.183.94:9200/weather/_doc" -H "Content-Type: application/json" -d '{
+  "field1": "value1",
+  "field2": "value2"
+}'
+
+
+
+https://discuss.elastic.co/t/cannot-disable-tls-and-security-in-eks/222335/7
+
+
+
+Instead of load data in postman, use cli command:
+curl -u elastic -k -X POST "http://10.152.183.176:9200/weather/_doc" -H "Content-Type: application/json" -d '{/json" -d '{url -u elastic -k -X POST "https://10.152.183.176:9200/wea  "field1": "value1",t-Type: appl
+  "City": "Canada",
+  "temperature": "29C"
+}'
+
+To disable https in elasticsearch:
+http:                  
+    tls:
+      selfSignedCertificate:
+        disabled: true
+
+
+
+elastic:095ZulrCw4j6Zw0V0DM5m9P3
+
+
+
+RK4dI2263Q0j0ye8Mu2RYt0p
+
+
+
+curl -u elastic -k -X POST "http://10.152.183.73:9200/weather/_doc" -H "Content-Type: application/json" -d '{
+  "City": "Canada",
+  "temperature": "29C"
+}'
+
+
+export PATH=$PWD/bin:$PATH
+
+kubectl label namespace default istio-injection=enabled
+
+k  annotate deployment sidecar.istio.io/inject=true
+k scale deployment --replicas=0 - 1 (edited) 
+
+
+
+helm upgrade pro-gra prometheus-community/kube-prometheus-stack -f config.yaml -n monitoring
+
+
+
+[Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("M3NqSERUNlFGT0E5NDlweg=="))
+
+
+
+M3NqSERUNlFGT0E5NDlweg== | -d argocd
