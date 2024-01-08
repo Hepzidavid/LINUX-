@@ -1,0 +1,37 @@
+git --version
+git config
+git config --global --list
+git config --global user.name ""
+git config --global user.email ""
+git init (Create empty git local repo) by default master
+git init -b main (Whn v don't want master branch)
+git branch -M main
+git status
+git add filename
+git add . (All the files)
+git commit -m "Updated"
+git log (Commits history)
+git diff (To view what changes I've made)
+git diff --staged
+git rm --cached filename (Delete the file)
+git remote add origin URL
+git remote -v (To view which is my origin)
+ssh-keygen -o (To connect server from local via ssh key)
+git push -u origin main (u-upstream)
+
+git push origin v1.0
+git tag (To view all the tags)
+git tag -a v1.0 -m "first release" 
+git show v1.0
+
+git checkout -b branchname(To create a new branch and switch branch)
+git switch -c branchname(To create a new branch and switch branch)
+git branch --all (To view all branches)
+git switch - (To go back to prev branch)
+git branch -d branchname (To delete a branch)
+git push origin branchname (To push a branch from local repo to remote repo)
+
+git switch main
+git merge branchname (To merge one branch features or code to another branch)
+
+git pull origin branchname (To pull updated code to our machine before merge)
